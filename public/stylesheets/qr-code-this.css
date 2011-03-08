@@ -9,9 +9,11 @@
 #qr_code_this span {
   display: block; 
   float: right;
+  clear: right;
   font-size: 10px;
   padding-top: 5px; 
 }
 #qr_code_this a {
   color:#444;
+  text-decoration: underline;
 }
