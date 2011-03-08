@@ -1,28 +1,19 @@
 var run;
 jQuery(function() {
-  jQuery.getCSS = function( url, media ) {
-      jQuery( document.createElement('link') ).attr({
-          href: url,
-          media: media || 'screen',
-          type: 'text/css',
-          rel: 'stylesheet'
-      }).appendTo('head');
-  };
-  $.getCSS('http://qr-code-this.heroku.com/stylesheets/qr-code-this.css');
   run = function() {
     var loc = document.location.href;
     var html = '' +
       '<div id="qr_code_this">'+
       ' <img src="http://chart.apis.google.com/chart?cht=qr&chs=150x150&choe=UTF-8&chld=H&chl='+escape(loc)+'" width="150" height="150" align="center"/>'+
-      ' <span>a <a href="http://highlyinteractive.net/" target="_blank">Highly Interactive</a> widget</span><span><a href="#" id="qr_code_this_close">Close</a></span>'+
+      ' <span><a href="http://sa.ndropad.in/" target="_blank">Sandro Padin</a> - <a href="#" id="qr_code_this_close">Close</a></span>'+
       '</div>';
     
     $(html).css({
-      position: "fixed",
-      top: "-210px",
-      right: "100px",
-      width: "150px",
-      height: "180px",
+      "position": "fixed",
+      "top": "-210px",
+      "right": "100px",
+      "width": "150px",
+      "height": "190px",
       "z-index": "9999"
     }).prependTo("body");
     
@@ -37,6 +28,25 @@ jQuery(function() {
         }
       },500);
       return false;
+    });
+    $('#qr_code_this').css({
+      "background":"#eeeeee",
+      "border":"1px solid #DEDEDE",
+      "padding": "5px 20px 0px 20px",
+      "-moz-box-shadow": "5px 5px 10px #999",
+      "-webkit-box-shadow": "5px 5px 10px #999",
+      "color":'#444'
+    });
+    $('#qr_code_this span').css({
+      "display": "block",
+      "float": "right",
+      "clear": "right",
+      "font-size": "10px",
+      "padding-top": "5px"
+    });
+    $("#qr_code_this a").css({
+      "color":"#444",
+      "text-decoration": "underline"
     });
   };
   run();
