@@ -2,10 +2,67 @@
 <head>
   <meta charset=utf-8>
   <title>QR Code This Bookmarklet</title>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+  <style type="text/css" media="screen">
+    body {
+      font: 12px "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
+    }
+    article {
+      width: 500px;
+      margin: 0 auto;
+    }
+    footer {
+      width: 200px;
+      float: right;
+    }
+    .bookmarklet {
+      padding: 5px;
+      background-color: #A7C8D7;
+      border: 2px solid #4C5B6A;
+      text-decoration: none;
+      color: #4C5B6A;
+    }
+  </style>
+  <script type="text/javascript" charset="utf-8">
+    $(function() {
+      /* I'm not even a big fan of Star Trek. **GASP** */
+      var cheese = [
+        "Live long and prosper,",
+        "Act, and you shall have dinner. Wait and you shall be dinner,",
+        "Beam me up, Scotty,"
+      ];
+      var i = Math.floor(Math.random()*cheese.length);
+      $("#cheeziness").text(cheese[i]);
+    });
+  </script>
 </head>
 <body>
-  Drag the 
-  <a href="javascript:(function(e,a,g,h,f,c,b,d){if(!(f=e.jQuery)||g%3Ef.fn.jquery||h(f)){c=a.createElement(%22script%22);c.type=%22text/javascript%22;c.src=%22http://ajax.googleapis.com/ajax/libs/jquery/%22+g+%22/jquery.min.js%22;c.onload=c.onreadystatechange=function(){if(!b&&(!(d=this.readyState)||d==%22loaded%22||d==%22complete%22)){h((f=e.jQuery).noConflict(1),b=1);f(c).remove()}};a.documentElement.childNodes[0].appendChild(c)}})(window,document,%221.2.6%22,function($,L){run%20=%20function()%20{%20%20%20%20var%20loc%20=%20document.location.href;%20%20%20%20var%20html%20=%20''%20+%20%20%20%20%20%20'%3Cdiv%20id=%22qr_code_this%22%3E'+%20%20%20%20%20%20'%20%3Cimg%20src=%22http://chart.apis.google.com/chart?cht=qr&chs=150x150&choe=UTF-8&chld=H&chl='+escape(loc)+'%22%20width=%22150%22%20height=%22150%22%20align=%22center%22/%3E'+%20%20%20%20%20%20'%20%3Cspan%3E%3Ca%20href=%22http://sa.ndropad.in/%22%20target=%22_blank%22%3ESandro%20Padin%3C/a%3E%20-%20%3Ca%20href=%22#%22%20id=%22qr_code_this_close%22%3EClose%3C/a%3E%3C/span%3E'+%20%20%20%20%20%20'%3C/div%3E';%20%20%20%20%20%20%20%20$(html).css({%20%20%20%20%20%20%22position%22:%20%22fixed%22,%20%20%20%20%20%20%22top%22:%20%22-210px%22,%20%20%20%20%20%20%22right%22:%20%22100px%22,%20%20%20%20%20%20%22width%22:%20%22150px%22,%20%20%20%20%20%20%22height%22:%20%22190px%22,%20%20%20%20%20%20%22z-index%22:%20%229999%22%20%20%20%20}).prependTo(%22body%22);%20%20%20%20%20%20%20%20$('%23qr_code_this').animate({%20%20%20%20%20%20top:%20%220%22%20%20%20%20},500);%20%20%20%20$('%23qr_code_this_close').click(function()%20{%20%20%20%20%20%20$('%23qr_code_this').animate({%20%20%20%20%20%20%20%20top:%20%22-210px%22,%20%20%20%20%20%20%20%20onComplete:%20function()%20{%20%20%20%20%20%20%20%20%20%20$('%23qr_code_this').remove();%20%20%20%20%20%20%20%20}%20%20%20%20%20%20},500);%20%20%20%20%20%20return%20false;%20%20%20%20});%20%20%20%20$('%23qr_code_this').css({%20%20%20%20%20%20%22background%22:%22%23eeeeee%22,%20%20%20%20%20%20%22border%22:%221px%20solid%20%23DEDEDE%22,%20%20%20%20%20%20%22padding%22:%20%225px%2020px%200px%2020px%22,%20%20%20%20%20%20%22-moz-box-shadow%22:%20%225px%205px%2010px%20%23999%22,%20%20%20%20%20%20%22-webkit-box-shadow%22:%20%225px%205px%2010px%20%23999%22,%20%20%20%20%20%20%22color%22:'%23444'%20%20%20%20});%20%20%20%20$('%23qr_code_this%20span').css({%20%20%20%20%20%20%22display%22:%20%22block%22,%20%20%20%20%20%20%22float%22:%20%22right%22,%20%20%20%20%20%20%22clear%22:%20%22right%22,%20%20%20%20%20%20%22font-size%22:%20%2210px%22,%20%20%20%20%20%20%22padding-top%22:%20%225px%22%20%20%20%20});%20%20%20%20$(%22%23qr_code_this%20a%22).css({%20%20%20%20%20%20%22color%22:%22%23444%22,%20%20%20%20%20%20%22text-decoration%22:%20%22underline%22%20%20%20%20});%20%20};%20%20run();});">QR Code This</a>
-  to your bookmarks bar now.
+  <article>
+    <header>
+      <h2>QR Code This</h2>
+    </header>
+    <section>
+      <p>This simple bookmarklet generates a <a href="http://en.wikipedia.org/wiki/QR_Code" target="_blank">QR Code</a> for the current page. Use a QR Code reader on your phone to scan the generated code and be automatically taken to the website. Easy peasy.</p>
+      <p>
+        Drag the 
+        <a class="bookmarklet" href="javascript:(function(e,a,g,h,f,c,b,d){if(!(f=e.jQuery)||g%3Ef.fn.jquery||h(f)){c=a.createElement(%22script%22);c.type=%22text/javascript%22;c.src=%22http://ajax.googleapis.com/ajax/libs/jquery/%22+g+%22/jquery.min.js%22;c.onload=c.onreadystatechange=function(){if(!b&&(!(d=this.readyState)||d==%22loaded%22||d==%22complete%22)){h((f=e.jQuery).noConflict(1),b=1);f(c).remove()}};a.documentElement.childNodes[0].appendChild(c)}})(window,document,%221.2.6%22,function($,L){run%20=%20function()%20{%20%20%20%20var%20loc%20=%20document.location.href;%20%20%20%20var%20html%20=%20''%20+%20%20%20%20%20%20'%3Cdiv%20id=%22qr_code_this%22%3E'+%20%20%20%20%20%20'%20%3Cimg%20src=%22http://chart.apis.google.com/chart?cht=qr&chs=150x150&choe=UTF-8&chld=H&chl='+escape(loc)+'%22%20width=%22150%22%20height=%22150%22%20align=%22center%22/%3E'+%20%20%20%20%20%20'%20%3Cspan%3E%3Ca%20href=%22http://sa.ndropad.in/%22%20target=%22_blank%22%3ESandro%20Padin%3C/a%3E%20-%20%3Ca%20href=%22#%22%20id=%22qr_code_this_close%22%3EClose%3C/a%3E%3C/span%3E'+%20%20%20%20%20%20'%3C/div%3E';%20%20%20%20%20%20%20%20$(html).css({%20%20%20%20%20%20%22position%22:%20%22fixed%22,%20%20%20%20%20%20%22top%22:%20%22-210px%22,%20%20%20%20%20%20%22right%22:%20%22100px%22,%20%20%20%20%20%20%22width%22:%20%22150px%22,%20%20%20%20%20%20%22height%22:%20%22190px%22,%20%20%20%20%20%20%22z-index%22:%20%229999%22%20%20%20%20}).prependTo(%22body%22);%20%20%20%20%20%20%20%20$('%23qr_code_this').animate({%20%20%20%20%20%20top:%20%220%22%20%20%20%20},500);%20%20%20%20$('%23qr_code_this_close').click(function()%20{%20%20%20%20%20%20$('%23qr_code_this').animate({%20%20%20%20%20%20%20%20top:%20%22-210px%22,%20%20%20%20%20%20%20%20onComplete:%20function()%20{%20%20%20%20%20%20%20%20%20%20$('%23qr_code_this').remove();%20%20%20%20%20%20%20%20}%20%20%20%20%20%20},500);%20%20%20%20%20%20return%20false;%20%20%20%20});%20%20%20%20$('%23qr_code_this').css({%20%20%20%20%20%20%22background%22:%22%23eeeeee%22,%20%20%20%20%20%20%22border%22:%221px%20solid%20%23DEDEDE%22,%20%20%20%20%20%20%22padding%22:%20%225px%2020px%200px%2020px%22,%20%20%20%20%20%20%22-moz-box-shadow%22:%20%225px%205px%2010px%20%23999%22,%20%20%20%20%20%20%22-webkit-box-shadow%22:%20%225px%205px%2010px%20%23999%22,%20%20%20%20%20%20%22color%22:'%23444'%20%20%20%20});%20%20%20%20$('%23qr_code_this%20span').css({%20%20%20%20%20%20%22display%22:%20%22block%22,%20%20%20%20%20%20%22float%22:%20%22right%22,%20%20%20%20%20%20%22clear%22:%20%22right%22,%20%20%20%20%20%20%22font-size%22:%20%2210px%22,%20%20%20%20%20%20%22padding-top%22:%20%225px%22%20%20%20%20});%20%20%20%20$(%22%23qr_code_this%20a%22).css({%20%20%20%20%20%20%22color%22:%22%23444%22,%20%20%20%20%20%20%22text-decoration%22:%20%22underline%22%20%20%20%20});%20%20};%20%20run();});">QR Code This</a>
+        bookmarklet to your bookmarks bar now.
+      </p>
+    </section>
+  </article>
+  <article>
+    <header>
+      <h4>List of QR Code readers</h4>
+    </header>
+    <section>
+      <p>Here's a short-list of QR Code readers. I've only used <a href="http://web.scanlife.com/us_en/download-application" target="_blank">ScanLife</a> for the iPhone. ScanLife has version for Android, Blackberry, Palm, etc.. Or <a href="http://www.mobile-barcodes.com/qr-code-software/" target="_blank">find you own</a>.</p>
+    </section>
+  </article>
+  <article>
+    <footer>
+      <p id="cheeziness"></p>
+      <p><a href="http://sa.ndropad.in" target="_blank">Sandro Padin</a></p>
+    </footer>
+  </article>
 </body>
 </html>
